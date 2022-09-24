@@ -14,6 +14,7 @@ load_dotenv()
 # 環境変数を参照
 import os
 SP_SHEET_KEY = os.getenv('SP_SHEET_KEY')
+SP_SHEET = os.getenv('SP_SHEET')
 
 def get_df_ec():
     url_ec = 'https://scraping.official.ec/'
@@ -51,7 +52,6 @@ def get_worksheet():
 
     sh = gc.open_by_key(SP_SHEET_KEY)
 
-    SP_SHEET = 'db'
     worksheet = sh.worksheet(SP_SHEET)
     return worksheet
 
